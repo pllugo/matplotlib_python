@@ -35,7 +35,7 @@ def line_plot():
     ax.plot(y, c='darkred', marker='^', ms=10, label='y=x**2')
     ax.legend()
     ax.grid()
-    custom_ticks = np.linspace(0, 10, 11, dtype=int)
+    custom_ticks = np.linspace(-10, 10, 11, dtype=int)
     ax.set_xticks(custom_ticks)
     ax.set_facecolor('whitesmoke')
     plt.show()
@@ -332,11 +332,11 @@ def file_plot():
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     # ---------------- Tipos de gráficos ---------------- #
-    line_plot()
+    #line_plot()
     scatter_plot()
-    bar_plot()
-    pie_plot()
+    #bar_plot()
+    #pie_plot()
     # --------------------------------------------------- # 
     # Bonus track
-    file_plot()
-    cursores()
+    #file_plot()
+    #cursores()

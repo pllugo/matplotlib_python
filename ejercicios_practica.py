@@ -34,6 +34,17 @@ def ej1():
     # Estamos aprovechando el concepto de comprension de listas
     # para generar los valores que toma "Y" por cada valor de "X"
     y = [i**2 for i in x]
+    fig = plt.figure()
+    fig.suptitle('Y=f(x**2)', fontsize=14)
+    ax = fig.add_subplot()
+
+    ax.plot(x, y, c='blue', marker='^', ms=10, label='y=x**2')
+    ax.legend()
+    ax.grid()
+    custom_ticks = np.linspace(-10, 10, 11, dtype=int)
+    ax.set_xticks(custom_ticks)
+    ax.set_facecolor('whitesmoke')
+    plt.show()
 
     # Crear una "figura" y crear un "ax" con add_subplot
     # Graficar el "line plot" de "Y" en función de "X"
@@ -55,7 +66,17 @@ def ej2():
     # para generar los valores que toma "Y" por cada valor de "X"
     y1 = [i**2 for i in x]
     y2 = [i**3 for i in x]
+    fig = plt.figure()
+    ax = fig.add_subplot()
 
+    ax.plot(x, y1, color = "red", marker = ".", label = "y1=x**2")
+    ax.plot(x, y2, color = "blue", marker = "+", label = "y2=x**3")
+    ax.set_facecolor("whitesmoke")
+    ax.set_title("Graficas y1=x**2 y y2=x**3")
+    ax.set_ylabel("Y")
+    ax.set_xlabel("x")
+    ax.legend()
+    plt.show()
     # Realizar un gráfico que representen las dos funciones
     # Para ello se debe llamar dos veces a "plot" con el mismo "ax"
 
@@ -77,7 +98,16 @@ def ej3():
 
     # Implementacion
     y = np.tanh(x)
-
+    fig = plt.figure()
+    fig.suptitle('Scatter', fontsize=16)
+    ax1 = fig.add_subplot()
+    ax1.scatter(x, y, c='m', marker='^', label = "tanh(x)")
+    ax1.set_facecolor('whitesmoke')
+    ax1.grid()
+    ax1.set_ylabel("Y")
+    ax1.set_xlabel("x")
+    ax1.legend()
+    plt.show()
     # Graficar la función utilizando "scatter"
 
     # Se debe colocar en la leyenda la función que representa
@@ -105,6 +135,51 @@ def ej4():
     y2 = x**3
     y3 = x**4
     y4 = np.sqrt(x)
+    fig = plt.figure(figsize=(5,5))
+    fig.tight_layout()
+    fig1 = fig.add_subplot(4,1,1)
+    fig2 = fig.add_subplot(4,1,2)
+    fig3 = fig.add_subplot(4,1,3)
+    fig4 = fig.add_subplot(4,1,4)
+    fig1.plot(x, y1, color ="r", marker = '+',label = "y1=x**2")
+    fig2.plot(x, y2, color ="b", marker = '.',label = "y2=x**3")
+    fig3.plot(x, y3, color ="g", marker = '^',label = "y3=x**4")
+    fig4.plot(x, y4, color ="r", marker = '*',label = "y4=sqrt(x)")
+
+    #Figura 1
+    fig1.set_title("Grafico 1",fontsize=6)
+    fig1.set_xlabel("X",fontsize=6)
+    fig1.set_ylabel("Y",fontsize=6)
+    fig1.set_facecolor("Whitesmoke")
+    fig1.legend()
+    fig1.grid()
+
+    #Figura 2
+    fig2.set_title("Grafico 2",fontsize=6)
+    fig2.set_xlabel("X",fontsize=6)
+    fig2.set_ylabel("Y",fontsize=6)
+    fig2.set_facecolor("Whitesmoke")
+    fig2.legend()
+    fig2.grid()
+
+    #Figura 3
+    fig3.set_title("Grafico 3",fontsize=6)
+    fig3.set_xlabel("X",fontsize=6)
+    fig3.set_ylabel("Y",fontsize=6)
+    fig3.set_facecolor("Whitesmoke")
+    fig3.legend()
+    fig3.grid()
+
+    #Figura 4
+
+    fig4.set_title("Grafico 4",fontsize=6)
+    fig4.set_xlabel("X",fontsize=6)
+    fig4.set_ylabel("Y",fontsize=6)
+    fig4.set_facecolor("Whitesmoke")
+    fig4.legend()
+    fig4.grid()
+
+    plt.show()
 
     # Esos tres gráficos deben estar colocados
     # en la diposición de 3 filas y 1 columna:
@@ -126,8 +201,8 @@ def ej4():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
-    # ej2()
-    # ej2()
-    # ej3()
+    #ej1()
+    #ej2()
+    #ej3()
+    ej4()
     # ej4()
